@@ -1,0 +1,11 @@
+Script started on 2026-08-05 23:45:03+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="122" LINES="14"]
+[?2004h]0;fsm1407@SE-5CG1156MWC: /mnt/c/Users/Fausto/OneDrive/Desktop/fullstackOpen-part12/script-answers[01;32mfsm1407@SE-5CG1156MWC[00m:[01;34m/mnt/c/Users/Fausto/OneDrive/Desktop/fullstackOpen-part12/script-answers[00m$ docker start -i cranky_aus tin
+[?2004l[?2004h]0;root@3d4c86a8d28f: /root@3d4c86a8d28f:/# node /usr/app/    src/app/index.js
+[?2004lHello from container
+Hello World
+[?2004h]0;root@3d4c86a8d28f: /root@3d4c86a8d28f:/# [Kexit
+[?2004lexit
+[?2004h]0;fsm1407@SE-5CG1156MWC: /mnt/c/Users/Fausto/OneDrive/Desktop/fullstackOpen-part12/script-answers[01;32mfsm1407@SE-5CG1156MWC[00m:[01;34m/mnt/c/Users/Fausto/OneDrive/Desktop/fullstackOpen-part12/script-answers[00m$ exit
+[?2004lexit
+
+Script done on 2026-08-05 23:45:47+00:00 [COMMAND_EXIT_CODE="0"]
