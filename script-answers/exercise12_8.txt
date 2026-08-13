@@ -1,0 +1,93 @@
+Script started on 2026-08-13 23:40:15+00:00 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="106" LINES="12"]
+[?2004h]0;fsm1407@SE-5CG1156MWC: /mnt/c/Users/Fausto/OneDrive/Desktop/fullstackOpen-part12/script-answers[01;32mfsm1407@SE-5CG1156MWC[00m:[01;34m/mnt/c/Users/Fausto/OneDrive/Desktop/fullstackOpen-part12/script-answers[00m$ cd ..
+[?2004l[?2004h]0;fsm1407@SE-5CG1156MWC: /mnt/c/Users/Fausto/OneDrive/Desktop/fullstackOpen-part12[01;32mfsm1407@SE-5CG1156MWC[00m:[01;34m/mnt/c/Users/Fausto/OneDrive/Desktop/fullstackOpen-part12[00m$ cd todo-app/todo-backend
+[?2004l[?2004h]0;fsm1407@SE-5CG1156MWC: /mnt/c/Users/Fausto/OneDrive/Desktop/fullstackOpen-part12/todo-app/todo-backend[01;32mfsm1407@SE-5CG1156MWC[00m:[01;34m/mnt/c/Users/Fausto/OneDrive/Desktop/fullstackOpen-part12/todo-app/todo-backend[00m$ doc ker start[K[K[K[K[Kps
+[?2004lCONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS                  PORTS                     NAMES
+cb10ac61f32d   mongo     "docker-entrypoint.s…"   5 minutes ago   Up 5 minutes (Paused)   0.0.0.0:3456->27017/tcp   todo-backend-mongo-1
+[?2004h]0;fsm1407@SE-5CG1156MWC: /mnt/c/Users/Fausto/OneDrive/Desktop/fullstackOpen-part12/todo-app/todo-backend[01;32mfsm1407@SE-5CG1156MWC[00m:[01;34m/mnt/c/Users/Fausto/OneDrive/Desktop/fullstackOpen-part12/todo-app/todo-backend[00m$ doc ker start todo-a[Kbackend-mongo-1
+[?2004lError response from daemon: cannot start a paused container, try unpause instead
+failed to start containers: todo-backend-mongo-1
+[?2004h]0;fsm1407@SE-5CG1156MWC: /mnt/c/Users/Fausto/OneDrive/Desktop/fullstackOpen-part12/todo-app/todo-backend[01;32mfsm1407@SE-5CG1156MWC[00m:[01;34m/mnt/c/Users/Fausto/OneDrive/Desktop/fullstackOpen-part12/todo-app/todo-backend[00m$ doc ker unpause todo-backend-mongo-1
+[?2004ltodo-backend-mongo-1
+[?2004h]0;fsm1407@SE-5CG1156MWC: /mnt/c/Users/Fausto/OneDrive/Desktop/fullstackOpen-part12/todo-app/todo-backend[01;32mfsm1407@SE-5CG1156MWC[00m:[01;34m/mnt/c/Users/Fausto/OneDrive/Desktop/fullstackOpen-part12/todo-app/todo-backend[00m$ doc ker exec -it doc[K[K[Ktodo-backend-mogn[K[Kngo-1 bash
+[?2004l[?2004hroot@cb10ac61f32d:/# [7mmongosh -u root -p example[27m
+[Aroot@cb10ac61f32d:/# mongosh -u root -p example
+[A
+[?2004l]0;mongosh mongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000Current Mongosh Log ID:	6a7e5668b788f8430d4ed396
+Connecting to:		[1m[32mmongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.9.2[0m
+Using MongoDB:		8.2.12
+[1m[33mUsing Mongosh[0m:		2.9.2
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+
+To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
+You can opt-out by running the disableTelemetry() command.
+
+[1G[0J [1G[?2004h[1m[33m------[0m
+   [1m[33mThe server generated these startup warnings when booting[0m
+   2026-08-13T23:35:05.993+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+   2026-08-13T23:35:06.497+00:00: For customers running the current memory allocator, we suggest changing the contents of the following sysfsFile
+   2026-08-13T23:35:06.497+00:00: For customers running the current memory allocator, we suggest changing the contents of the following sysfsFile
+   2026-08-13T23:35:06.497+00:00: We suggest setting the contents of sysfsFile to 0.
+   2026-08-13T23:35:06.497+00:00: We suggest setting swappiness to 0 or 1, as swapping can cause performance problems.
+[1m[33m------[0m
+
+[1G[0Jtest> [7Gshoe[1G[0Jtest> sho[10Gw dbs
+[1madmin[0m         100.00 KiB
+[1mconfig[0m         60.00 KiB
+[1mlocal[0m          72.00 KiB
+[1mthe_database[0m   56.00 KiB
+[1G[0Jtest> [7Guse the_database
+switched to db the_database
+[1G[0Jthe_database> [15Gshoe[1G[0Jthe_database> sho[18Gw collections
+[1mtodos[0m
+[1G[0Jthe_database> [15Gdb.todoscopu[1G[0Jthe_database> db.todoscop[26Gy.find([[1G[0Jthe_database> db.todoscopy.find([33G{})
+
+[1G[0Jthe_database> [15Gdb.todos.find({})
+[
+  {
+    _id: ObjectId([32m'6a7e54a80513f5c05fa9eb5b'[39m),
+    text: [32m'Write code'[39m,
+    done: [33mtrue[39m
+  },
+  {
+    _id: ObjectId([32m'6a7e54a80513f5c05fa9eb5c'[39m),
+    text: [32m'Learn about containers'[39m,
+    done: [33mtrue[39m
+  }
+]
+[1G[0Jthe_database> [15Gdb.todos.insertON[1G[0Jthe_database> db.todos.insertO[31Gne({text[33mtext[39m:[32m"[39m[32mI[39m[32mn[39m[32mc[39m[32mr[39m[32me[39m[32ma[39m[32ms[39m[32me[39m [32mt[39m[32mh[39m[32me[39m [32mn[39m[32mu[39m[32mm[39m[32mb[39m[32me[39m[32mr[39m [32mo[39m[32mf[39m [32mt[39m[32mo[39m[32mo[39m[32ml[39m[32ms[39m [32mi[39m[32mn[39m [32mm[39m[32my[39m [32mt[39m[32mo[39m[32mo[39m[32ml[39m [32mb[39m[32me[39m[32ml[39m[32mt[39m[32m"[39m,d[36mdo[39mdone[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[32m"Increase the number of tools in my tool belt"[39m,don[90G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[32m"Increase the number of tools in my tool belt"[39m,[36mdo[39m[89G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[32m"Increase the number of tools in my tool belt"[39m,d[88G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[32m"Increase the number of tools in my tool belt"[39m,[87G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[32m"Increase the number of tools in my tool belt"[39m[86G, [32m"[39m[32md[39m[32mo[39m[32mn[39m[32me[39m[32m"[39m:[1D[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[32m"Increase the number of tools in my tool belt"[39m, [32m"done:[39m[93G[1D[1D[1D[1D[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[32m"Increase the number of tools in my tool belt"[39m, [33mdone[39m:[88G[1C[1C[1C[1C[1Cfals[33mfalse[39m})
+{
+  acknowledged: [33mtrue[39m,
+  insertedId: ObjectId([32m'6a7e5741b788f8430d4ed397'[39m)
+}
+[1G[0Jthe_database> [15Gdb.todos.find({})
+[
+  {
+    _id: ObjectId([32m'6a7e54a80513f5c05fa9eb5b'[39m),
+    text: [32m'Write code'[39m,
+    done: [33mtrue[39m
+  },
+  {
+    _id: ObjectId([32m'6a7e54a80513f5c05fa9eb5c'[39m),
+    text: [32m'Learn about containers'[39m,
+    done: [33mtrue[39m
+  },
+  {
+    _id: ObjectId([32m'6a7e5741b788f8430d4ed397'[39m),
+    text: [32m'Increase the number of tools in my tool belt'[39m,
+    done: [33mfalse[39m
+  }
+]
+[1G[0Jthe_database> [15G
+(To exit, press Ctrl+C again or Ctrl+D or type .exit)
+[1G[0Jthe_database> [15G
+[?2004l]0;[?2004hroot@cb10ac61f32d:/# ^C[?2004l[?2004h[?2004l
+[?2004hroot@cb10ac61f32d:/# ^C[?2004l[?2004h[?2004l
+[?2004hroot@cb10ac61f32d:/# exit
+[?2004lexit
+[?2004h]0;fsm1407@SE-5CG1156MWC: /mnt/c/Users/Fausto/OneDrive/Desktop/fullstackOpen-part12/todo-app/todo-backend[01;32mfsm1407@SE-5CG1156MWC[00m:[01;34m/mnt/c/Users/Fausto/OneDrive/Desktop/fullstackOpen-part12/todo-app/todo-backend[00m$ exi t
+[?2004lexit
+
+Script done on 2026-08-13 23:47:03+00:00 [COMMAND_EXIT_CODE="130"]
