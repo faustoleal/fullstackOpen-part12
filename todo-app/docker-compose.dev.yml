@@ -1,15 +1,30 @@
 services:
   todo-frontend:
     image: todo-frontend
+    build:
+      context: ./todo-frontend
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./todo-frontend/:/usr/src/app
     container_name: todo-frontend
     ports:
       - 5173:5173
+    environment:
+      - VITE_BACKEND_URL=http://localhost:8080/
 
   todo-backend:
     image: todo-backend-server
+    build:
+      context: ./todo-backend
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./todo-backend/:/usr/src/app
     container_name: todo-backend
     ports:
       - 3000:3000
+    environment:
+      - REDIS_URL=redis://redis:6379
+      - MONGO_URL=mongodb://root:example@mongo:27017/the_database?authSource=admin
     depends_on:
       - mongo
       - redis
@@ -28,7 +43,7 @@ services:
   mongo:
     image: mongo
     ports:
-      - "27107:27017"
+      - 27017:27017
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
